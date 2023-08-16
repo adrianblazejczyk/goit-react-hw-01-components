@@ -1,35 +1,28 @@
-export const FriendListItem = ({ stats }) => {
-  //   console.log(
-  //     friends.map(friend => {
-  //       <>
-  //         <li className="item">
-  //           <span className="status">{friend.isOnline}</span>
-  //           <img
-  //             className="avatar"
-  //             src={friend.avatar}
-  //             alt="User avatar"
-  //             width="48"
-  //           />
-  //           <p className="name">{friend.name}</p>
-  //           <span>elo</span>
-  //         </li>
-  //       </>;
-  //     })
-  //   );
+import css from './FriendList.module.css';
 
-  console.log(
-    stats.map(status => {
-      return stats.name;
-    })
-  );
-  return;
-};
-
-export const FriendlyList = stats => {
+export const FriendListItem = ({ friends }) => {
   return (
     <>
-      <ul className="friend-list">
-        <FriendListItem stats={stats}></FriendListItem>
+      {friends.map(friend => (
+        <li key={friend.id} className={css.item}>
+          <span className={css.status}>&#x00B7;</span>
+          <img
+            className={css.avatar}
+            src={friend.avatar}
+            alt="User avatar"
+            width="48"
+          />
+          <p className={css.name}>{friend.name}</p>
+        </li>
+      ))}
+    </>
+  );
+};
+export const FriendlyList = ({ friends }) => {
+  return (
+    <>
+      <ul className={css.friendList}>
+        <FriendListItem friends={friends}></FriendListItem>
       </ul>
     </>
   );

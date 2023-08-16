@@ -1,6 +1,6 @@
 import user from '../data/user';
 import data from '../data/data';
-import friends from '../data/friends';
+import dataFriends from '../data/friends';
 import { Profile, Statistics, FriendlyList } from 'components';
 
 const appStyle = {
@@ -16,6 +16,7 @@ const appStyle = {
 };
 
 export const App = () => {
+  //console.log(dataFriends.map(ob => ob.name));
   return (
     <div style={appStyle}>
       <Profile
@@ -27,7 +28,7 @@ export const App = () => {
       />
       <Statistics title="Upload stats" stats={data} />
       <Statistics stats={data} />
-      <FriendlyList stats={friends}></FriendlyList>
+      <FriendlyList friends={dataFriends}></FriendlyList>
     </div>
   );
 };

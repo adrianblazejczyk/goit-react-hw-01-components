@@ -5,6 +5,7 @@
   border-width: 1px;
   overflow: hidden;
   border-radius: 15px;
+  box-shadow: 5px 10px 5px gray;
 }
 .title {
   height: 120px;
