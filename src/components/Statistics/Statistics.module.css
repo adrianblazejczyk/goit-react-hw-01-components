@@ -10,7 +10,9 @@
   height: 120px;
   background: white;
   text-align: center;
+  line-height: 120px;
   flex-direction: column;
+  font-size: 50px;
 }
 .statList {
   display: flex;
@@ -32,7 +34,7 @@
   margin-bottom: 5px;
 }
 .percentage {
-  font-size: 35px;
+  font-size: 30px;
 }
 
 .mp3 {

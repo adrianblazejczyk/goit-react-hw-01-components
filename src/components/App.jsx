@@ -1,6 +1,7 @@
 import user from '../data/user';
 import data from '../data/data';
-import { Profile, Statistics } from 'components';
+import friends from '../data/friends';
+import { Profile, Statistics, FriendlyList } from 'components';
 
 const appStyle = {
   height: '100vh',
@@ -11,6 +12,7 @@ const appStyle = {
   alignItems: 'center',
   fontSize: 40,
   color: '#010101',
+  gap: '20px',
 };
 
 export const App = () => {
@@ -25,6 +27,7 @@ export const App = () => {
       />
       <Statistics title="Upload stats" stats={data} />
       <Statistics stats={data} />
+      <FriendlyList stats={friends}></FriendlyList>
     </div>
   );
 };
