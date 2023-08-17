@@ -1,0 +1,16 @@
+.transactionHistory {
+  width: 800px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.transactionHistory thead {
+  text-transform: uppercase;
+  color: white;
+  background-color: lightseagreen;
+}
+
+.transactionHistory tbody tr {
+  background-color: gray;
+  text-align: center;
+}

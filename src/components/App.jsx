@@ -1,7 +1,13 @@
 import user from '../data/user';
 import data from '../data/data';
 import dataFriends from '../data/friends';
-import { Profile, Statistics, FriendlyList } from 'components';
+import dataTransaction from '../data/transactions';
+import {
+  Profile,
+  Statistics,
+  FriendlyList,
+  TransactionHistory,
+} from 'components';
 
 const appStyle = {
   height: '100vh',
@@ -28,7 +34,8 @@ export const App = () => {
       />
       <Statistics title="Upload stats" stats={data} />
       <Statistics stats={data} />
-      <FriendlyList friends={dataFriends}></FriendlyList>
+      <FriendlyList friends={dataFriends} />
+      <TransactionHistory dataTransaction={dataTransaction} />
     </div>
   );
 };
