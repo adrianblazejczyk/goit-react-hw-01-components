@@ -4,10 +4,10 @@
 }
 .profile {
   width: 360px;
-  height: 610px;
+  min-height: 500px;
   background-color: white;
   border-style: solid;
-  border-width: 1px;
+  border-width: 2px;
   border-radius: 15px;
   box-shadow: 5px 10px 5px gray;
   font-family: Arial, Helvetica, sans-serif;

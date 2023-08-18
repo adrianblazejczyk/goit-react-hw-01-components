@@ -1,8 +1,9 @@
 .statistics {
   display: block;
   width: 360px;
+  min-height: 210px;
   border-style: solid;
-  border-width: 1px;
+  border-width: 2px;
   overflow: hidden;
   border-radius: 15px;
   box-shadow: 5px 10px 5px gray;
@@ -39,14 +40,18 @@
 }
 
 .mp3 {
-  background-color: red;
+  background-color: rgb(255, 30, 0);
 }
 .pdf {
   background-color: purple;
 }
 .docx {
-  background-color: blue;
+  background-color: rgb(0, 168, 247);
 }
 .psd {
   background-color: green;
+}
+
+.heightSmall {
+  min-height: 90px;
 }

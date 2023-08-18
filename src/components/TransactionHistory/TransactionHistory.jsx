@@ -3,8 +3,11 @@ import css from './TransactionHistory.module.css';
 export const ItemTransaction = ({ transactions }) => {
   return (
     <>
-      {transactions.map(transaction => (
-        <tr key={transaction.id}>
+      {transactions.map((transaction, index) => (
+        <tr
+          key={transaction.id}
+          className={index % 2 ? css.bgcGray : css.bgcWhite}
+        >
           <td>{transaction.type}</td>
           <td>{transaction.amount}</td>
           <td>{transaction.currency}</td>

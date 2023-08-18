@@ -1,11 +1,19 @@
 import css from './FriendList.module.css';
+import clsx from 'clsx';
 
 export const FriendListItem = ({ friends }) => {
   return (
     <>
       {friends.map(friend => (
         <li key={friend.id} className={css.item}>
-          <span className={css.status}>&#x00B7;</span>
+          <span
+            className={clsx(
+              css.status,
+              friend.isOnline ? css.statusOnLine : css.statusOffLine
+            )}
+          >
+            &#x00B7;
+          </span>
           <img
             className={css.avatar}
             src={friend.avatar}

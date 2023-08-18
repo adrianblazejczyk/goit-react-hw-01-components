@@ -1,16 +1,30 @@
 .transactionHistory {
   width: 800px;
-  border: 1px solid black;
+  border: 2px solid black;
   background-color: white;
+  border-radius: 15px;
+  padding: 5px;
 }
 
 .transactionHistory thead {
   text-transform: uppercase;
   color: white;
-  background-color: lightseagreen;
+  background-color: #00bcd5;
+  font-size: 30px;
+  line-height: 50px;
 }
 
 .transactionHistory tbody tr {
-  background-color: gray;
+  text-transform: capitalize;
+  color: #484848;
   text-align: center;
+  font-size: 30px;
+  line-height: 50px;
+}
+.bgcWhite {
+  background-color: white;
+}
+.bgcGray {
+  background-color: gainsboro;
+  border-color: gainsboro;
 }
