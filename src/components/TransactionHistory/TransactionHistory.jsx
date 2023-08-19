@@ -1,21 +1,5 @@
 import css from './TransactionHistory.module.css';
-
-export const ItemTransaction = ({ transactions }) => {
-  return (
-    <>
-      {transactions.map((transaction, index) => (
-        <tr
-          key={transaction.id}
-          className={index % 2 ? css.bgcGray : css.bgcWhite}
-        >
-          <td>{transaction.type}</td>
-          <td>{transaction.amount}</td>
-          <td>{transaction.currency}</td>
-        </tr>
-      ))}
-    </>
-  );
-};
+import { TransactionItem } from '../../components';
 
 export const TransactionHistory = ({ dataTransaction }) => {
   return (
@@ -29,7 +13,15 @@ export const TransactionHistory = ({ dataTransaction }) => {
           </tr>
         </thead>
         <tbody>
-          <ItemTransaction transactions={dataTransaction} />
+          {dataTransaction.map((transaction, index) => (
+            <TransactionItem
+              key={transaction.id}
+              type={transaction.type}
+              amount={transaction.amount}
+              currency={transaction.currency}
+              index={index}
+            />
+          ))}
         </tbody>
       </table>
     </>
