@@ -1,5 +1,6 @@
 import css from './Statistics.module.css';
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
 import { StatisticsItem } from '../../components';
 
 export const Statistics = ({ title, data }) => (
@@ -8,12 +9,17 @@ export const Statistics = ({ title, data }) => (
 
     <ul className={css.statList}>
       {data.map((data, index) => (
-        <StatisticsItem
-          key={data.id}
-          label={data.label}
-          percentage={data.percentage}
-        />
+        <StatisticsItem key={data.id} data={data} />
       ))}
     </ul>
   </section>
 );
+
+Statistics.propTypes = {
+  title: PropTypes.string,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    })
+  ),
+};

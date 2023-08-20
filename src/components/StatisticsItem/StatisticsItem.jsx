@@ -2,22 +2,24 @@ import css from './StatisticsItem.module.css';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 
-export const StatisticsItem = ({ id, label, percentage }) => (
+export const StatisticsItem = ({ data }) => (
   <li
     className={clsx(
       css.item,
-      label === '.pdf' && css.pdf,
-      label === '.docx' && css.docx,
-      label === '.mp3' && css.mp3,
-      label === '.psd' && css.psd
+      data.label === '.pdf' && css.pdf,
+      data.label === '.docx' && css.docx,
+      data.label === '.mp3' && css.mp3,
+      data.label === '.psd' && css.psd
     )}
   >
-    <span className={css.label}>{label}</span>
-    <span className={css.percentage}>{percentage}%</span>
+    <span className={css.label}>{data.label}</span>
+    <span className={css.percentage}>{data.percentage}%</span>
   </li>
 );
 
 StatisticsItem.propTypes = {
-  label: PropTypes.string.isRequired,
-  percentage: PropTypes.number.isRequired,
+  data: PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
+  }),
 };

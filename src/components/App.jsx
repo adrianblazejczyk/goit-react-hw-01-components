@@ -5,7 +5,7 @@ import dataTransaction from '../data/transactions';
 import {
   Profile,
   Statistics,
-  FriendlyList,
+  FriendList,
   TransactionHistory,
 } from 'components';
 
@@ -22,23 +22,12 @@ const appStyle = {
 };
 
 export const App = () => {
-  //console.log(dataFriends.map(ob => ob.name));
-
   return (
     <div style={appStyle}>
-      <Profile
-        title="Upload stats"
-        username={user.username}
-        tag={user.tag}
-        location={user.location}
-        avatar={user.avatar}
-        followers={user.stats.followers}
-        views={user.stats.views}
-        likes={user.stats.likes}
-      />
+      <Profile user={user} />
       <Statistics title="Upload stats" data={data} />
       <Statistics data={data} />
-      <FriendlyList friends={dataFriends} />
+      <FriendList friends={dataFriends} />
       <TransactionHistory dataTransaction={dataTransaction} />
     </div>
   );

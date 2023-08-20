@@ -1,5 +1,6 @@
 import css from './TransactionHistory.module.css';
 import { TransactionItem } from '../../components';
+import PropTypes from 'prop-types';
 
 export const TransactionHistory = ({ dataTransaction }) => (
   <table className={css.transactionHistory}>
@@ -14,12 +15,18 @@ export const TransactionHistory = ({ dataTransaction }) => (
       {dataTransaction.map((transaction, index) => (
         <TransactionItem
           key={transaction.id}
-          type={transaction.type}
-          amount={transaction.amount}
-          currency={transaction.currency}
+          transaction={transaction}
           index={index}
         />
       ))}
     </tbody>
   </table>
 );
+
+TransactionHistory.propTypes = {
+  dataTransaction: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    })
+  ),
+};
