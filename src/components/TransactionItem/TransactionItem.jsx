@@ -11,6 +11,7 @@ export const TransactionItem = ({ transaction, index }) => (
 TransactionItem.propTypes = {
   index: PropTypes.number.isRequired,
   transaction: PropTypes.shape({
+    id: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     amount: PropTypes.string.isRequired,
     currency: PropTypes.string.isRequired,
